@@ -137,6 +137,18 @@ const ChatInterface = () => {
 
   return (
     <div className="chat-container">
+      <div className="chat-bg-layer"></div>
+      <div className="particles-container">
+        {[...Array(20)].map((_, i) => (
+          <div key={i} className="particle" style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 5}s`,
+            width: `${Math.random() * 3 + 1}px`,
+            height: `${Math.random() * 3 + 1}px`
+          }}></div>
+        ))}
+      </div>
       <div className="chat-header glass-card">
         <div className="header-info">
           <h1>🕉️ Shree Krishna</h1>
@@ -250,17 +262,6 @@ function App() {
             <button onClick={() => setView('landing')} className="back-btn glass-card">
               ← Home
             </button>
-            <div className="particles-container">
-              {[...Array(20)].map((_, i) => (
-                <div key={i} className="particle" style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 5}s`,
-                  width: `${Math.random() * 3 + 1}px`,
-                  height: `${Math.random() * 3 + 1}px`
-                }}></div>
-              ))}
-            </div>
             <ChatInterface />
           </motion.div>
         )}
