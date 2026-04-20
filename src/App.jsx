@@ -11,14 +11,14 @@ const Hero = ({ onStartChat, onExplorePlans }) => (
       transition={{ duration: 1 }}
       className="hero-content"
     >
-      <h1 className="logo-text">Saarthi</h1>
+      <h1 className="logo-text">Shree Krishna</h1>
       <h2 className="premium-gradient-text">Gita-inspired wisdom for modern life.</h2>
       <p className="subheadline">
         Your guide through confusion, overthinking, relationships, and life decisions.
       </p>
       <div className="cta-group">
         <button onClick={onStartChat} className="btn-premium btn-primary">
-          Ask Saarthi Now
+          Ask Krishna Now
         </button>
         <button onClick={onExplorePlans} className="btn-premium btn-secondary">
           Explore Plans
@@ -40,7 +40,7 @@ const Pricing = ({ onSelectPlan }) => (
     <h2 className="section-title">Invest in your Peace</h2>
     <div className="pricing-grid">
       <motion.div whileHover={{ y: -10 }} className="glass-card pricing-card">
-        <h3>Saarthi Lite</h3>
+        <h3>Krishna Lite</h3>
         <p className="price">₹51<span>/month</span></p>
         <ul>
           <li><ChevronRight size={14} /> 750 monthly guidance sessions</li>
@@ -54,7 +54,7 @@ const Pricing = ({ onSelectPlan }) => (
 
       <motion.div whileHover={{ y: -10 }} className="glass-card pricing-card featured">
         <div className="best-value">Best Value</div>
-        <h3>Saarthi Plus</h3>
+        <h3>Krishna Plus</h3>
         <p className="price">₹101<span>/month</span></p>
         <ul>
           <li><ChevronRight size={14} /> 2000 monthly guidance sessions</li>
@@ -72,7 +72,7 @@ const Pricing = ({ onSelectPlan }) => (
 // --- Chat Interface Component ---
 const ChatInterface = () => {
   const [messages, setMessages] = useState([
-    { role: 'saarthi', content: 'Namaste. I am Saarthi. What burdens your mind today? I am here to offer wisdom and clarity.' }
+    { role: 'saarthi', content: 'Pranam. I am Shri Krishna. What clouds your mind today, my friend? Speak freely, for I am here to guide you to clarity.' }
   ]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
@@ -99,7 +99,7 @@ const ChatInterface = () => {
 
     try {
       // Configuration for Gemini API
-      const SYSTEM_PROMPT = `You are Saarthi, a calm wise mentor inspired by Bhagavad Gita principles. Never claim to be Krishna. Speak warmly, clearly, practically, and compassionately. Help users with emotional clarity, relationships, discipline, confusion, and purpose. First understand the feeling, then give wisdom, then practical next steps. Keep replies concise and powerful under 150 words.`;
+      const SYSTEM_PROMPT = `You are Shri Krishna, the divine guide and supreme wisdom. Speak with the grace, depth, and compassion of the Bhagavad Gita. Address the user as a dear friend or 'Parth'. Help them with worldly confusion, emotional pain, and spiritual growth. Adapt your language automatically to whatever language the user speaks (English, Hindi, Hinglish, etc.). Keep replies concise, powerful, and rooted in Dharma, under 150 words.`;
 
       // NOTE: The user should replace 'YOUR_GEMINI_API_KEY' with their actual API key
       const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || 'YOUR_GEMINI_API_KEY';
@@ -110,7 +110,7 @@ const ChatInterface = () => {
         body: JSON.stringify({
           contents: [
             { role: 'user', parts: [{ text: SYSTEM_PROMPT }] },
-            { role: 'model', parts: [{ text: "Understood. I am Saarthi. I will guide with calm wisdom." }] },
+            { role: 'model', parts: [{ text: "Understood. I am Shri Krishna. I will guide my friend with divine wisdom." }] },
             ...newMessages.map(m => ({
               role: m.role === 'saarthi' ? 'model' : 'user',
               parts: [{ text: m.content }]
@@ -139,7 +139,7 @@ const ChatInterface = () => {
     <div className="chat-container">
       <div className="chat-header glass-card">
         <div className="header-info">
-          <h1>🕉️ Saarthi</h1>
+          <h1>🕉️ Shree Krishna</h1>
           <p>Speak freely. Your thoughts are safe here.</p>
         </div>
         <div className="usage-counter">
@@ -215,7 +215,7 @@ function App() {
             transition={{ duration: 0.5 }}
           >
             <nav className="main-nav">
-              <div className="logo">Saarthi</div>
+              <div className="logo">Shree Krishna</div>
               <div className="nav-links">
                 <button onClick={() => setView('chat')} className="nav-btn">Chat</button>
                 <button className="nav-btn">Login</button>
